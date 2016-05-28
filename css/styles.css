@@ -169,16 +169,20 @@ body {
 	.tweet-actions {
 		text-align: right;
 	}
-		.tweet-actions ul {
-			list-style-type: none;
-		}
-			.tweet-actions li {
-				display: inline-block;
-				font-size: 12px;
-				color: #2FC2EF;
-				cursor: pointer;
-				margin-right: 2px;
-			}
+	.tweet-actions ul {
+		list-style-type: none;
+		display: none;
+	}
+	.tweet:hover .tweet-actions ul {
+		display: block;
+	}
+	.tweet-actions li {
+		display: inline-block;
+		font-size: 12px;
+		color: #2FC2EF;
+		cursor: pointer;
+		margin-right: 2px;
+	}
 
 	.icon {
 		color: #2FC2EF;

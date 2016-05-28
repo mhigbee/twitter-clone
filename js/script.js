@@ -28,11 +28,21 @@ $( document ).ready(function() {
     $( "#tweet-submit" ).click(function(){
         var newTweetCopy =  $(".tweet:first").clone();
         newTweetCopy.find('.tweet-text').text($(".tweet-compose").val());
+        newTweetCopy.find('.fullname').text($("#profile-summary").find('p').text());
+        newTweetCopy.find('.avatar:first').replaceWith($("#profile-summary").find('.avatar').clone());
 
         $( "#stream" ).prepend(newTweetCopy);
 
 
     });
+    $(".stats").hide();
+    $(".reply").hide();
+    $(".tweet").click(function(){
+        $(this).find(".reply").show();
+        $(this).find(".stats").show();
+    });
+
+
 
 
 
