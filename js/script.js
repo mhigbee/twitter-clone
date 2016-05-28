@@ -3,6 +3,7 @@
  */
 
 $( document ).ready(function() {
+    jQuery("time.timeago").timeago();
     $( "#tweet-controls").hide()
     $( "#tweet-content").click(function(){
         $('#tweet-controls').show();
@@ -31,13 +32,13 @@ $( document ).ready(function() {
         newTweetCopy.find('.fullname').text($("#profile-summary").find('p').text());
         newTweetCopy.find('.avatar:first').replaceWith($("#profile-summary").find('.avatar').clone());
 
-        $( "#stream" ).prepend(newTweetCopy);
-
+        $("#stream").prepend(newTweetCopy);
 
     });
     $(".stats").hide();
     $(".reply").hide();
-    $(".tweet").click(function(){
+
+    $(document).on('click','.tweet', function (){
         $(this).find(".reply").show();
         $(this).find(".stats").show();
     });
